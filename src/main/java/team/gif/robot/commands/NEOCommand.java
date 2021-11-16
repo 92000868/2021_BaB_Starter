@@ -23,7 +23,7 @@ public class NEOCommand extends CommandBase {
         Globals.g_buttonControl = true;
     }
 
-    private static NeoShooting getInstance() {
+    static NeoShooting getInstance() {
         return null;
     }
 

@@ -1,5 +1,6 @@
 package team.gif.robot.commands;
 
+import team.gif.robot.Globals;
 import team.gif.robot.subsystems.NeoShooting;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -22,8 +23,6 @@ public class NeoRun extends CommandBase
         NeoShooting.getInstance().setPID(60);
     }
 
-
-
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
@@ -33,5 +32,8 @@ public class NeoRun extends CommandBase
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
+        NEOCommand.getInstance().setVoltage(0);
+        Globals.g_buttonControl = false;
+
     }
 }
