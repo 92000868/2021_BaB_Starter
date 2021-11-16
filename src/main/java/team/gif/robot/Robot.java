@@ -90,6 +90,7 @@ public class Robot extends TimedRobot {
     System.out.println("teleop init");
 
     oi = new OI();
+    CIMCommand.schedule();
   }
 
   @Override
