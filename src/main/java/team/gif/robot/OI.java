@@ -4,6 +4,9 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import team.gif.lib.AxisButton;
+import team.gif.robot.commands.CIMButton;
+import team.gif.robot.commands.CIMButton2;
+import team.gif.robot.commands.NEOCommand;
 
 
 public class OI {
@@ -67,6 +70,10 @@ public class OI {
          *
          */
 
+
+        dB.whenHeld(new CIMButton());
+        dX.whenHeld(new CIMButton2());
+        dY.whenHeld(new NEOCommand());
     }
 
 }
