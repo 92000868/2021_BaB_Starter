@@ -9,7 +9,8 @@ public class NeoRun extends CommandBase
 
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
 
-    public NeoRun() {
+    public NeoRun()
+    {
     }
 
     // Called when the command is initially scheduled.
@@ -19,19 +20,22 @@ public class NeoRun extends CommandBase
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
-    public void execute() {
+    public void execute()
+    {
         NeoShooting.getInstance().setPID(60);
     }
 
-    // Returns true when the command should end.
+    // Returns true when the command is about to end.
     @Override
-    public boolean isFinished() {
+    public boolean isFinished()
+    {
         return false;
     }
 
-    // Called once the command ends or is interrupted.
+    // Should be called once the command ends.
     @Override
-    public void end(boolean interrupted) {
+    public void end(boolean interrupted)
+    {
         NEOCommand.getInstance().setVoltage(0);
         Globals.g_buttonControl = false;
 
