@@ -1,7 +1,6 @@
 package team.gif.robot.commands;
 
 import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.PWM;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import team.gif.robot.Globals;
 import team.gif.robot.Robot;
@@ -16,7 +15,11 @@ public class CIMJoystick extends CommandBase
 
     // Called when the command is initially scheduled.
     @Override
-    public void initialize() {
+    public void initialize()
+    {
+
+
+
     }
 
     // Called every time the scheduler runs while the command is scheduled.
@@ -24,7 +27,8 @@ public class CIMJoystick extends CommandBase
     public void execute() {
         if (Globals.g_buttonControl == false) {
             double joystick = -Robot.oi.driver.getY(GenericHID.Hand.kLeft);
-            CIMJoystick.getInstance().setSpeed(joystick);
+            assert CIMJoystick.getInstance() != null;
+            CIMShoot.getInstance().setSpeed(joystick);
         }
     }
 

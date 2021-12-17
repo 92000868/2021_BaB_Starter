@@ -4,26 +4,30 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import team.gif.robot.Globals;
 import team.gif.robot.subsystems.NeoShooting;
 
-public class NEOCommand extends CommandBase {
+public class NEOCommand extends CommandBase
+{
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
 
-    public NEOCommand() {
+    public NEOCommand()
+    {
+
     }
-
-
     // Called when the command is initially scheduled.
     @Override
-    public void initialize() {
+    public void initialize()
+    {
+
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        NEOCommand.getInstance().setVoltage(2.5);
+        NeoShooting.getInstance().setVoltage(2.5);
         Globals.g_buttonControl = true;
     }
 
-    static NeoShooting getInstance() {
+    static NeoShooting getInstance()
+    {
         return null;
     }
 
@@ -36,8 +40,9 @@ public class NEOCommand extends CommandBase {
 
     // Called once the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {
-        NEOCommand.getInstance().setVoltage(0);
+    public void end(boolean interrupted)
+    {
+        NeoShooting.getInstance().setVoltage(0);
         Globals.g_buttonControl = false;
     }
 }

@@ -14,17 +14,23 @@ public class CIMButton extends CommandBase {
 
     // Called when the command is initially scheduled.
     @Override
-    public void initialize() {
+    public void initialize()
+    {
+
+
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
-    public void execute() {
+    public void execute()
+    {
         Globals.g_buttonControl = true;
-        if(LimitSwitch.getInstance().getState()){
+        if(LimitSwitch.getInstance().getState())
+        {
             CIMShoot.getInstance().setSpeed(0.1);
         }
-        else{
+        else
+            {
             CIMShoot.getInstance().setSpeed(0.2);
         }
 

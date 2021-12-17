@@ -7,12 +7,10 @@ import team.gif.robot.subsystems.LimitSwitch;
 
 public class CIMButton2 extends CommandBase
 {
-
-
-
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
 
-    public CIMButton2() {
+    public CIMButton2()
+    {
     }
 
     // Called when the command is initially scheduled.
@@ -34,13 +32,15 @@ public class CIMButton2 extends CommandBase
 
     // Returns true when the command should end.
     @Override
-    public boolean isFinished() {
+    public boolean isFinished()
+    {
         return false;
     }
 
     // Called once the command ends or is interrupted.
     @Override
-    public void end(boolean interrupted) {
+    public void end(boolean interrupted)
+    {
         CIMShoot.getInstance().setSpeed(0);
         Globals.g_buttonControl = false;
     }
