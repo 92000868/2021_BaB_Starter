@@ -25,7 +25,7 @@ public class NeoRun extends CommandBase
     @Override
     public void execute()
     {
-        NeoShooting.getInstance().setPID(60);
+        NeoShooting.getInstance().setRPM(60);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class NeoRun extends CommandBase
     @Override
     public void end(boolean interrupted)
     {
-        NeoShooting.getInstance().setVoltage(0);
+        NeoShooting.getInstance().setRPM(0);
         Globals.g_buttonControl = false;
     }
 }

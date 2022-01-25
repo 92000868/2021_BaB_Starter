@@ -28,7 +28,8 @@ import team.gif.robot.RobotMap;
             NEO.enableVoltageCompensation(12);
             NEO.setIdleMode(CANSparkMax.IdleMode.kCoast);
             NEO.setSmartCurrentLimit(stallMaxAmps,stallMaxAmps);
-
+            NEOPIDController.setP(0.00045);
+            NEOPIDController.setFF(0.00030);
             NEOPIDController.setOutputRange(0, 1);
         }
         public void setVoltage(double voltage) {
@@ -36,11 +37,12 @@ import team.gif.robot.RobotMap;
         }
 
         public double getVelocity () { return NEOEncoder.getVelocity();}
-        public void setPID (double setPoint) {
+        public void setRPM (double setPoint) {
             NEOPIDController.setReference(setPoint, ControlType.kVelocity);
         }
 
         public String getVelocity_Shuffleboard(){ return String.format("%12.0f",getVelocity());}
+
 
     }
 
